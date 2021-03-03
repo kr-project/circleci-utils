@@ -8,6 +8,7 @@ function run_main() {
     if [[ "$CIRCLE_USERNAME" != *"$GITHUB_SUFFIX"* ]]; then
       echo "${CIRCLE_USERNAME} has incorrect git username -- please add -codaio and update in go/roster"
       exit 0
+
     fi
      # shellcheck disable=SC2001
     USER_EMAIL=$(echo "${CIRCLE_USERNAME}" | sed "s/${GITHUB_SUFFIX}$/@${EMAIL_DOMAIN}/")
